@@ -46,8 +46,10 @@ public class MeaningController {
             c_number1.setText(res.substring(0,4));
             c_number2.setText(res.substring(4,8));
             c_number3.setText(res.substring(8,12));
+            setProvince(res.substring(0,4));
+            setDailyUse(res.substring(4,8));
+            setModel(res.substring(8,12));
         }
-        setDailyUse(res.substring(4,8));
     }
 
     /**
