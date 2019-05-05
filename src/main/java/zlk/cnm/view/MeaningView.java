@@ -43,7 +43,7 @@ public class MeaningView extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception {
         Parent root = FXMLLoader.load(this.getClass().getResource("/view/CardNumberMeaning.fxml"));
-        Scene scene = new Scene(root,554,395);
+        Scene scene = new Scene(root,532,370);
         primaryStage.initStyle(StageStyle.DECORATED);
         primaryStage.setScene(scene);
         primaryStage.setTitle("卡号信息");
