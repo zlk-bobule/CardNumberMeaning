@@ -14,28 +14,11 @@ import java.io.IOException;
 
 public class MeaningView extends Application {
 
-    private String number;
+//    private String number;
 
     public MeaningView(){}
 
     public MeaningView(String number){
-        this.number = number;
-    }
-
-    @Override
-    public void start(Stage primaryStage) throws Exception {
-        Parent root = FXMLLoader.load(this.getClass().getResource("/view/CardNumberMeaning.fxml"));
-        Scene scene = new Scene(root,554,395);
-        primaryStage.initStyle(StageStyle.DECORATED);
-        primaryStage.setScene(scene);
-        primaryStage.setTitle("卡号信息");
-        primaryStage.show();
-    }
-
-    /**
-     * 读卡号，显示读卡界面
-     */
-    public void showView(){
         try{
             File file = new File("save.txt");
             if(!file.exists()){
@@ -55,6 +38,41 @@ public class MeaningView extends Application {
         }catch (IOException e){
             e.printStackTrace();
         }
-        Application.launch(MeaningView.class);
     }
+
+    @Override
+    public void start(Stage primaryStage) throws Exception {
+        Parent root = FXMLLoader.load(this.getClass().getResource("/view/CardNumberMeaning.fxml"));
+        Scene scene = new Scene(root,554,395);
+        primaryStage.initStyle(StageStyle.DECORATED);
+        primaryStage.setScene(scene);
+        primaryStage.setTitle("卡号信息");
+        primaryStage.show();
+    }
+
+    /**
+     * 读卡号，显示读卡界面
+     */
+//    public void showView(){
+//        try{
+//            File file = new File("save.txt");
+//            if(!file.exists()){
+//                file.createNewFile();
+//            }
+//            //先清空文件
+//            FileWriter fw1 = new FileWriter(file);
+//            fw1.write("");
+//            fw1.flush();
+//            fw1.close();
+//            //写入
+//            FileWriter fw = new FileWriter(file, true);
+//            BufferedWriter bw = new BufferedWriter(fw);
+//            bw.write(number);
+//            bw.flush();
+//            bw.close();
+//        }catch (IOException e){
+//            e.printStackTrace();
+//        }
+//        Application.launch(MeaningView.class);
+//    }
 }
