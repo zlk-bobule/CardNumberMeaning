@@ -31,8 +31,9 @@ public class MeaningController {
     public void initialize() {
         String read = "";
         String res = "";
-        try(FileReader reader = new FileReader("save.txt");
-        BufferedReader bufferedReader = new BufferedReader(reader)){
+        try{
+            FileReader reader = new FileReader("save.txt");
+            BufferedReader bufferedReader = new BufferedReader(reader);
             while ((read = bufferedReader.readLine()) != null) {
                 res = read;
             }
